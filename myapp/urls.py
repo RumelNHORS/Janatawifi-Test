@@ -5,6 +5,6 @@ urlpatterns = [
     path('', views.CustomerAddView.as_view(), name='add-customer'),
     path('update/<int:id>/', views.CustomerUpdate.as_view(), name='customer-update'),
     path('/<int:id>/', views.CustomerDeleteView.as_view(), name='data-delete'),
-    
+    path('json/', views.JsonView.as_view(), name='json-data'),
     
 ]

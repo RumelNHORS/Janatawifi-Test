@@ -41,3 +41,7 @@ class CustomerDeleteView(RedirectView):
         Customer.objects.get(pk=del_id).delete()
         return super().get_redirect_url(*args, **kwargs)
 
+class JsonView(View):
+    def get(self, request):
+        data = list(JsonModel.objects.values())
+        return JsonResponse(data, safe=False)
